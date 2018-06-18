@@ -14,4 +14,4 @@ The goal is to use Flutter to build Friendlychat, a simple, extensible chat app 
 
 ## Shots of the app
 
-<img src="https://user-images.githubusercontent.com/23660137/41318644-9f235e70-6eb6-11e8-85c3-659d9aa073d9.gif" height="600">  <img src="https://user-images.githubusercontent.com/23660137/41318464-023492aa-6eb6-11e8-8b59-967015cc7028.png" height="600"/>
+<img src="https://user-images.githubusercontent.com/23660137/41559350-6a6970d4-7361-11e8-9b2b-80a135b29e56.gif" height="600">  <img src="https://user-images.githubusercontent.com/23660137/41559277-355e1944-7361-11e8-9741-2fb49821881b.png" height="600"/>

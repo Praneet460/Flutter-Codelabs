@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:friendlychat/view/chatmessage.dart';
+import 'package:friendlychat/view/bottom.dart';
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -90,23 +91,55 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(_appTitle),
+
+        actions: <Widget>[
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              new Icon(Icons.videocam, color: Colors.white,),
+              new SizedBox(width: 20.0,),
+              new Icon(Icons.call, color: Colors.white,),
+              new SizedBox(width: 10.0,),
+              new IconButton(icon: new Icon(Icons.more_vert),
+                  onPressed: (){
+                  })
+
+            ],
+          )
+
+        ],
       ),
-      body: new Column(
+      body: Stack(
+        fit: StackFit.expand,
         children: <Widget>[
-          new Flexible(
-              child: new ListView.builder(
+          new Image(image: new AssetImage("assets/images/bg.jpg"),
+          fit: BoxFit.cover,),
+          new Column(
+            children: <Widget>[
+              new Flexible(
+                child: new ListView.builder(
                   padding: new EdgeInsets.all(8.0),
                   reverse: true,
                   itemCount: _message.length,
                   itemBuilder: (_, int index) =>
-                   _message[index], ),),
-          new Divider(height: 1.0,),
-          new Container(
-            decoration: new BoxDecoration(
-              color: Theme.of(context).cardColor),
-            child: _buildTextComposer(),
-            ),
+                  Dismissible(
+                      key: new Key(_message[index]),
+                      onDismissed: (direction){
+                        _message.remove(index);
 
+                      },
+                      child: _message[index]), ),),
+              new Divider(height: 1.0,),
+              new Container(
+                decoration: new BoxDecoration(
+                    color: Theme.of(context).cardColor),
+                child: _buildTextComposer(),
+              ),
+
+              new Bottomfiles(),
+
+            ],
+          ),
         ],
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:friendlychat/view/chatscreen.dart';
+
 class ChatMessage extends StatelessWidget {
   var profileimg = "assets/images/profile.jpg";
   final String text;
@@ -14,6 +14,7 @@ class ChatMessage extends StatelessWidget {
           curve: Curves.easeOut),
       axisAlignment: 0.0,
       child: new Container(
+
         margin: const EdgeInsets.symmetric(vertical: 10.0),
         child: new Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,11 +34,30 @@ class ChatMessage extends StatelessWidget {
                 children: <Widget>[
                   new Text(_name,
                     style: new TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w800
                     ),),
-                  new Container(
-                    margin: const EdgeInsets.only(top: 5.0),
-                    child: new Text(text),
+                  new SizedBox(height: 5.0,),
+                  Material(
+                    borderRadius: new BorderRadius.only(bottomLeft: new Radius.circular(8.0),
+                        bottomRight: new Radius.circular(8.0), topRight: new Radius.circular(8.0)),
+                      color: Colors.blue,
+                    shadowColor: Colors.black,
+                    child: new Container(
+
+                      
+
+                      margin: const EdgeInsets.only(top: 5.0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: new Text(text, style:
+                          new TextStyle(
+                            color: Colors.white,
+                            fontSize: 15.0,
+
+                          ),),
+                      ),
+                    ),
                   )
 
                 ],
