@@ -122,13 +122,17 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                   reverse: true,
                   itemCount: _message.length,
                   itemBuilder: (_, int index) =>
-                  Dismissible(
-                      key: new Key(_message[index]),
-                      onDismissed: (direction){
-                        _message.remove(index);
-
-                      },
-                      child: _message[index]), ),),
+//                  Dismissible(
+//                      key: new Key("_message[index]"),
+//                      onDismissed: (direction){
+//                        setState(() {
+//                          _message.removeAt(index);
+//
+//                        });
+//
+//                      },
+//                      child:
+                      _message[index] ),),
               new Divider(height: 1.0,),
               new Container(
                 decoration: new BoxDecoration(
